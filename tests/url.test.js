@@ -1,6 +1,13 @@
 const request = require('supertest');
 const app = require('../server'); // make sure your server exports the express app
 
+const mongoose = require('mongoose');
+
+afterAll(async () => {
+  await mongoose.connection.close();
+});
+
+
 describe('URL Shortener API', () => {
   let shortId;
 

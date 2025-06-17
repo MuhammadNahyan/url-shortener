@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { nanoid } = require("nanoid");
 const dotenv = require("dotenv");
 const PORT = process.env.PORT || 4000;
 const urlRoutes = require('./routes/urlRoutes');

@@ -1,5 +1,5 @@
 const Url = require('../models/Url');
-const { nanoid } = require('nanoid');
+const { v4: uuidv4 } = require("uuid");
 
 // POST /api/url - create short URL
 exports.createShortUrl = async (req, res) => {
@@ -10,7 +10,7 @@ exports.createShortUrl = async (req, res) => {
     }
 
     // Generate a unique shortId
-    const shortId = nanoid(8);
+    const shortId = uuidv4().slice(0, 8)
 
     // Save to DB
     const newUrl = new Url({ originalUrl, shortId });
